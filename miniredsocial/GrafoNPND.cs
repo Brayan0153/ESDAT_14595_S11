@@ -73,9 +73,7 @@ namespace miniredsocial
             Console.WriteLine(n1 + " y " + n2 + " no son amigos.");
         }
         public void Mostrar()
-        {
-            Console.WriteLine("\nMatriz:");
-
+        {      
             for (int f = 0; f < cantidad; f++)
             {
                 for (int c = 0; c < cantidad; c++)
