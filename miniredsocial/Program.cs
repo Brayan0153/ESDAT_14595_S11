@@ -1,14 +1,18 @@
-﻿/*
- * Menu:
- * 1-Agrega Persona (agregar a la lista)
- * 2-Conecta Personas (pide 2 nombres y conecta 
- *      esas personas mediante la red[,])
- * 3-Son_amigos? (pide 2 nombres e indica si estan relacionados,
- *      es decir que si un amigo de un amigo los conoce)
- * 4-Fin
- */
+﻿using miniredsocial;
 
+GrafoNPND g = new GrafoNPND(5);
 
-using miniredsocial;
+g.AgregarPersona(new Persona { Nombre = "Anali" });
+g.AgregarPersona(new Persona { Nombre = "Jorge" });
+g.AgregarPersona(new Persona { Nombre = "Carlos" });
+g.AgregarPersona(new Persona { Nombre = "Valeri" });
 
-Persona[] lista = new Persona[100];
+g.Conectar("Anali", "Jorge");
+g.Conectar("Jorge", "Carlos");
+g.Conectar("Carlos", "Valeri");
+
+g.Mostrar();
+
+g.SonAmigos("Anali", "Carlos"); 
+g.SonAmigos("Anali", "Valeri");   
+g.SonAmigos("Anali", "Jorge");    
